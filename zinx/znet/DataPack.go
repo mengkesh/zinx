@@ -32,7 +32,7 @@ func (this *DataPack)Pack(message ziface.IMessage)([]byte,error){
 }
 func(this *DataPack)UnPack(data []byte)(ziface.IMessage,error){
 	message:=&Message{}
-	databuffer:=bytes.NewBuffer(data)
+	databuffer:=bytes.NewReader(data)
 	err:=binary.Read(databuffer,binary.LittleEndian,&message.DataLen)
 	if err!=nil{
 		return nil,err
