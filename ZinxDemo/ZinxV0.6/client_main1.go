@@ -61,7 +61,7 @@ func main() {
 	}()
 	for {
 
-		msg := znet.NewMessage([]byte("hello,zinx"), 0)
+		msg := znet.NewMessage([]byte("hello,zinx"), 1)
 		binarydata, err := dp.Pack(msg)
 		if err != nil {
 			fmt.Println("pack err,", err)
@@ -73,7 +73,7 @@ func main() {
 			break
 		}
 
-		//time.Sleep(time.Nanosecond*5)
+		time.Sleep(time.Second)
 	}
 
 }

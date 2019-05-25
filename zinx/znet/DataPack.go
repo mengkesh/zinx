@@ -1,7 +1,7 @@
 package znet
 
 import (
-	"zinx/ziface"
+	"zinx/zinx/ziface"
 	"bytes"
 	"encoding/binary"
 )

@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2000965c-291e-4c39-96ac-053db3a055c3" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/ZinxDemo/ZinxV0.1/server_main.go" beforeDir="false" afterPath="$PROJECT_DIR$/ZinxDemo/ZinxV0.1/server_main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZinxDemo/ZinxV0.5/client_main.go" beforeDir="false" afterPath="$PROJECT_DIR$/ZinxDemo/ZinxV0.5/client_main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ZinxDemo/ZinxV0.5/server_main.go" beforeDir="false" afterPath="$PROJECT_DIR$/ZinxDemo/ZinxV0.5/server_main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zinx/ziface/IServer.go" beforeDir="false" afterPath="$PROJECT_DIR$/zinx/ziface/IServer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zinx/znet/Connection.go" beforeDir="false" afterPath="$PROJECT_DIR$/zinx/znet/Connection.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zinx/znet/DataPack.go" beforeDir="false" afterPath="$PROJECT_DIR$/zinx/znet/DataPack.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zinx/znet/Message.go" beforeDir="false" afterPath="$PROJECT_DIR$/zinx/znet/Message.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zinx/znet/Request.go" beforeDir="false" afterPath="$PROJECT_DIR$/zinx/znet/Request.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zinx/znet/Router.go" beforeDir="false" afterPath="$PROJECT_DIR$/zinx/znet/Router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zinx/znet/Server.go" beforeDir="false" afterPath="$PROJECT_DIR$/zinx/znet/Server.go" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="IServer.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zinx/ziface/IServer.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Server.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zinx/znet/Server.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1560">
+              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <folding>
+                <element signature="e#14#78#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Router.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zinx/znet/Router.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zinx.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ZinxDemo/ZinxV0.6/config/zinx.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="client_main.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ZinxDemo/ZinxV0.6/client_main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="588">
+              <caret line="73" column="9" lean-forward="true" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server_main.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ZinxDemo/ZinxV0.6/server_main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+              <folding>
+                <element signature="e#14#69#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="client_main1.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ZinxDemo/ZinxV0.6/client_main1.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1449">
+              <caret line="75" column="30" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IConnection.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zinx/ziface/IConnection.go">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="Connection.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zinx/znet/Connection.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="441">
+              <caret line="70" column="9" lean-forward="true" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageHandler.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zinx/znet/MessageHandler.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+              <folding>
+                <element signature="e#14#51#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="C:\Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/zinx/znet/DataPack.go" />
+        <option value="$PROJECT_DIR$/zinx/znet/Message.go" />
+        <option value="$PROJECT_DIR$/zinx/znet/Request.go" />
+        <option value="$PROJECT_DIR$/zinx/znet/Router.go" />
+        <option value="$PROJECT_DIR$/ZinxDemo/ZinxV0.1/server_main.go" />
+        <option value="$PROJECT_DIR$/ZinxDemo/ZinxV0.5/client_main.go" />
+        <option value="$PROJECT_DIR$/zinx/ziface/IMsgHandler.go" />
+        <option value="$PROJECT_DIR$/zinx/znet/MessageHandler.go" />
+        <option value="$PROJECT_DIR$/zinx/znet/Server.go" />
+        <option value="$PROJECT_DIR$/zinx/znet/Connection.go" />
+        <option value="$PROJECT_DIR$/ZinxDemo/ZinxV0.5/server_main.go" />
+        <option value="$PROJECT_DIR$/zinx/ziface/IServer.go" />
+        <option value="$PROJECT_DIR$/ZinxDemo/ZinxV0.6/client_main.go" />
+        <option value="$PROJECT_DIR$/ZinxDemo/ZinxV0.6/client_main1.go" />
+        <option value="$PROJECT_DIR$/ZinxDemo/ZinxV0.6/server_main.go" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="-7" />
+    <option name="width" value="1029" />
+    <option name="height" value="1047" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="zinx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zinx" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zinx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zinx" type="462c0819:PsiDirectoryNode" />
+              <item name="zinx" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zinx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zinx" type="462c0819:PsiDirectoryNode" />
+              <item name="zinx" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zinx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zinx" type="462c0819:PsiDirectoryNode" />
+              <item name="zinx" type="462c0819:PsiDirectoryNode" />
+              <item name="ziface" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zinx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zinx" type="462c0819:PsiDirectoryNode" />
+              <item name="zinx" type="462c0819:PsiDirectoryNode" />
+              <item name="znet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zinx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zinx" type="462c0819:PsiDirectoryNode" />
+              <item name="ZinxDemo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zinx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zinx" type="462c0819:PsiDirectoryNode" />
+              <item name="ZinxDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="ZinxV0.6" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zinx" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zinx" type="462c0819:PsiDirectoryNode" />
+              <item name="ZinxDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="ZinxV0.6" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="go.gopath.indexing.explicitly.defined" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GO\workspace\go\src\zinx\ZinxDemo\ZinxV0.6" />
+      <recent name="D:\GO\workspace\go\src\zinx\ZinxDemo\ZinxV0.6\config" />
+      <recent name="D:\GO\workspace\go\src\zinx\ZinxDemo" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="zinx" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/" />
+      <package value="zinx" />
+      <directory value="$PROJECT_DIR$/" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="zinx" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="DIRECTORY" />
+      <package value="zinx" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+    </configuration>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="0" width="1029" height="1047" extended-state="0" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.21671827" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.3539326" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/zinx/ziface/IDataPack.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zinx/ziface/IMessage.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zinx/ziface/IRequest.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZinxDemo/ZinxV0.1/server_main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding>
+            <element signature="e#14#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZinxDemo/ZinxV0.1/client_main.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zinx/znet/datapack_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="e#14#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zinx/znet/Request.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-13">
+          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zinx/znet/DataPack.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          <folding>
+            <element signature="e#14#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zinx/ziface/IRouter.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZinxDemo/ZinxV0.5/client_main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1575">
+          <caret line="75" column="17" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
+          <folding>
+            <element signature="e#14#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zinx/ziface/IMsgHandler.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZinxDemo/ZinxV0.5/server_main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="e#14#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZinxDemo/ZinxV0.6/config/zinx.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zinx/znet/Router.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zinx/znet/Server.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1560">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="e#14#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zinx/ziface/IServer.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZinxDemo/ZinxV0.6/config/server_main1.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zinx/ziface/IConnection.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zinx/znet/Message.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zinx/znet/Connection.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="70" column="9" lean-forward="true" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zinx/znet/MessageHandler.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding>
+            <element signature="e#14#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZinxDemo/ZinxV0.6/client_main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="73" column="9" lean-forward="true" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZinxDemo/ZinxV0.6/client_main1.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1449">
+          <caret line="75" column="30" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ZinxDemo/ZinxV0.6/server_main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+          <folding>
+            <element signature="e#14#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

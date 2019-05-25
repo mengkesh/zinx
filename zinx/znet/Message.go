@@ -1,6 +1,6 @@
 package znet
 
-import "zinx/ziface"
+import "zinx/zinx/ziface"
 
 type Message struct {
 	Data []byte

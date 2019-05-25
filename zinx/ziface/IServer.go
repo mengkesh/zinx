@@ -7,5 +7,5 @@ type IServer interface {
 	//运行服务器
 	Server()
 	//添加路由
-	AddRouter(router IRouter)
+	AddRouter(routerid uint32,router IRouter)
 }

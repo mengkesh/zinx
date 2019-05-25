@@ -1,10 +1,10 @@
 package znet
 
 import (
-	"zinx/ziface"
+	"zinx/zinx/ziface"
 	"fmt"
 	"net"
-	"zinx/config"
+	"zinx/zinx/config"
 )
 
 type Server struct {
@@ -15,7 +15,7 @@ type Server struct {
 	Port int
 	//服务器名称
 	Name string
-	Router ziface.IRouter
+	MsgHandler ziface.IMsgHandler
 	//ziface.IServer
 }
 
@@ -39,7 +39,7 @@ func NewServer(name string) ziface.IServer {
 		IPVersion: "tcp4",
 		IP:        config.GlobalObject.Host,
 		Port:      config.GlobalObject.Port,
-		Router:nil,
+		MsgHandler:NewMessageHandler(),
 	}
 	return s
 }
@@ -72,12 +72,12 @@ func (s *Server) Start() {
 				continue
 			}
 			//此时conn就已经和对端客户端连接
-			go func() {
+
 				//4 客户端有数据请求，处理客户端业务(读、写)
-				dealconn:=NewConnection(conn,cid,s.Router)
+				dealconn:=NewConnection(conn,cid,s.MsgHandler)
 				cid++
 				go dealconn.Start()
-			}()
+
 
 		}
 	}()
@@ -98,7 +98,7 @@ func (s *Server) Server() {
 
 	}
 }
-func(s *Server)AddRouter(router ziface.IRouter){
-	s.Router=router
+func(s *Server)AddRouter(msgid uint32,router ziface.IRouter){
+	s.MsgHandler.AddRouter(msgid,router)
 }
 

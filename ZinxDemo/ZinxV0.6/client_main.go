@@ -73,7 +73,7 @@ func main() {
 			break
 		}
 
-		//time.Sleep(time.Nanosecond*5)
+		time.Sleep(time.Second)
 	}
 
 }

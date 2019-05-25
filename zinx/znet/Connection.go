@@ -2,9 +2,11 @@ package znet
 
 import (
 	"net"
-	"zinx/ziface"
+	"zinx/zinx/ziface"
 	"fmt"
 	"io"
+	"errors"
+	"strconv"
 )
 
 type Connection struct {
@@ -12,15 +14,15 @@ type Connection struct {
 	ConnID uint32
 	isClosed bool
 	//handleAPI ziface.HandleFunc
-	Router ziface.IRouter
+	MsgHandler ziface.IMsgHandler
 }
-func NewConnection(conn *net.TCPConn,connID uint32,router ziface.IRouter)ziface.IConnection{
+func NewConnection(conn *net.TCPConn,connID uint32,handler ziface.IMsgHandler)ziface.IConnection{
 	c:=&Connection{
 		Conn:conn,
 		ConnID:connID,
 		isClosed:false,
 		//handleAPI:callback_api,
-		Router:router,
+		MsgHandler:handler,
 	}
 	return c
 }
@@ -42,18 +44,18 @@ func(this *Connection)StartReader(){
 		dp:=NewDataPack()
 		datahed:=make([]byte,dp.GetHeadLen())
 		n,err:=io.ReadFull(this.Conn,datahed)
-		if n==0{
+		if n<=0{
 			fmt.Println("client outline")
-			break
+			return
 		}
 		if err!=nil&&err!=io.EOF{
 			fmt.Println("read datahead err,",err)
-			continue
+			return
 		}
 		msg,err:=dp.UnPack(datahed)
 		if err!=nil{
 			fmt.Println("unpack err,",err)
-			break
+			return
 		}
 		if msg.GetDataLen()>0 {
 			msg.(*Message).Data=make([]byte,msg.GetDataLen())
@@ -64,16 +66,11 @@ func(this *Connection)StartReader(){
 			}
 			if err!=nil&&err!=io.EOF{
 				fmt.Println("read data err,",err)
-				continue
+				break
 			}
 		}
 		req:=NewRequest(this,msg)
-		go func() {
-			this.Router.PreHandle(req)
-			//time.Sleep()
-			this.Router.Handle(req)
-			this.Router.PostHandle(req)
-		}()
+		go this.MsgHandler.DoMsgHandler(req)
 
 		/*if err:=this.handleAPI(req);err!=nil{
 			fmt.Println("ConnID", this.ConnID, "Handle is error", err)
@@ -103,6 +100,10 @@ func(this *Connection)GetRemoteAddr()net.Addr{
 return this.Conn.RemoteAddr()
 }
 func(this *Connection)Send(data []byte,dataid uint32)error{
+	if this.isClosed == true {
+		return errors.New("connection is closed, conID is :" + strconv.Itoa(int(this.GetConnId())))
+	}
+
 	dp:=NewDataPack()
 	msg:=NewMessage(data,dataid)
 	binarydata,err:=dp.Pack(msg)
@@ -111,7 +112,7 @@ func(this *Connection)Send(data []byte,dataid uint32)error{
 		return err
 	}
 if _,err:=this.Conn.Write(binarydata);err!=nil{
-	fmt.Println("send buf error")
+	fmt.Println("send buf err",err)
 	return err
 }
 return nil
