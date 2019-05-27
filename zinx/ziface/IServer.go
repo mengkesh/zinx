@@ -1,4 +1,5 @@
 package ziface
+
 type IServer interface {
 	//启动服务器
 	Start()
@@ -8,4 +9,9 @@ type IServer interface {
 	Server()
 	//添加路由
 	AddRouter(routerid uint32,router IRouter)
+	Getconnmng()IConnManager
+	AddOnConnStart(func(connection IConnection))
+	AddOnConnStop(func(connection IConnection))
+	CallOnConnStart(conn IConnection)
+	CallOnConnStop(conn IConnection)
 }
