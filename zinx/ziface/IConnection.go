@@ -15,6 +15,9 @@ type IConnection interface {
 	GetRemoteAddr()net.Addr
 	//发送数据给对方客户端
 	Send(data []byte,dataid uint32)error
+	SetProperty(key string,value interface{})
+	GetProperty(key string)(interface{},error)
+	DelProperty(key string)
 }
 //业务处理方法 抽象定义
 type HandleFunc func( request IRequest) error
