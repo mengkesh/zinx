@@ -1,4 +1,4 @@
-package config
+package conf
 
 import (
 	"io/ioutil"
@@ -19,7 +19,7 @@ type GlobalObj struct {
 
 var GlobalObject *GlobalObj
 func(g *GlobalObj)LoadConfig(){
-	data,err:=ioutil.ReadFile("config/zinx.json")
+	data,err:=ioutil.ReadFile("conf/zinx.json")
 	if err!=nil{
 		panic(err)
 	}

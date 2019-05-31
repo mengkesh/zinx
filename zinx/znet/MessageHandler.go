@@ -3,7 +3,7 @@ package znet
 import (
 	"zinx/zinx/ziface"
 	"fmt"
-	"zinx/zinx/config"
+	"zinx/zinx/conf"
 )
 
 type MessageHandler struct {
@@ -13,9 +13,9 @@ type MessageHandler struct {
 }
 func NewMessageHandler()ziface.IMsgHandler{
 	return &MessageHandler{
-		Apis:make(map[uint32]ziface.IRouter),
-		TaskQueue:make([]chan ziface.IRequest,config.GlobalObject.WorkPoolSize),
-		WorkPool:config.GlobalObject.WorkPoolSize,
+		Apis:      make(map[uint32]ziface.IRouter),
+		TaskQueue: make([]chan ziface.IRequest, conf.GlobalObject.WorkPoolSize),
+		WorkPool:  conf.GlobalObject.WorkPoolSize,
 	}
 }
 func (mh *MessageHandler)AddRouter(msgid uint32,router ziface.IRouter){
@@ -30,6 +30,7 @@ func(this *MessageHandler)DoMsgHandler(request ziface.IRequest){
 	router,ok:=this.Apis[request.GetMsg().GetDataID()]
 	if !ok{
 		fmt.Println("Api msgid=",request.GetMsg().GetDataID(),"is not found!need add")
+		return
 	}
 	router.PreHandle(request)
 	router.Handle(request)
@@ -46,7 +47,7 @@ func(this *MessageHandler)StartOneWork(i int,taskqueue chan ziface.IRequest){
 }
 func(this *MessageHandler)StartWorkPool(){
 	for i:=0;i<int(this.WorkPool);i++{
-		this.TaskQueue[i]=make(chan ziface.IRequest,config.GlobalObject.MaxWorkerTaskLen)
+		this.TaskQueue[i]=make(chan ziface.IRequest, conf.GlobalObject.MaxWorkerTaskLen)
 		go this.StartOneWork(i,this.TaskQueue[i])
 	}
 }

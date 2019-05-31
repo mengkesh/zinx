@@ -7,7 +7,7 @@ import (
 	"io"
 	"errors"
 	"strconv"
-	"zinx/zinx/config"
+	"zinx/zinx/conf"
 	"sync"
 )
 
@@ -44,7 +44,7 @@ func (this *Connection) StartReader() {
 	defer fmt.Println("start reader is stop,connID = ", this.ConnID, "Reader is exit, remote addr is = ", this.GetRemoteAddr().String())
 	defer this.Stop()
 	for {
-		//buf:=make([]byte,config.GlobalObject.MaxPackageSize)
+		//buf:=make([]byte,conf.GlobalObject.MaxPackageSize)
 		//cnt,err:=this.Conn.Read(buf)
 		//if cnt==0{
 		//	fmt.Println("client outline")
@@ -83,7 +83,7 @@ func (this *Connection) StartReader() {
 			}
 		}
 		req := NewRequest(this, msg)
-		if config.GlobalObject.WorkPoolSize > 0 {
+		if conf.GlobalObject.WorkPoolSize > 0 {
 			this.MsgHandler.SendMsgToTaskQueue(req)
 		} else {
 			go this.MsgHandler.DoMsgHandler(req)

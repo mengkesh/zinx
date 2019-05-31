@@ -3,4 +3,13 @@ package pb;          //后期我们生成的go文件所在的包
 message Person{
     string name = 1;
     int32 age =2;
+    repeated string Emails =3;
+    repeated Phone phone =4;
+    oneof Data{
+    string School=5;
+    uint32 Class =6;
+    }
+}
+message Phone{
+    string Number=1;
 }

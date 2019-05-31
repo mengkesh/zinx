@@ -21,11 +21,17 @@ var _ = math.Inf
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
 type Person struct {
-	Name                 string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Age                  int32    `protobuf:"varint,2,opt,name=age,proto3" json:"age,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
+	Name   string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	Age    int32    `protobuf:"varint,2,opt,name=age,proto3" json:"age,omitempty"`
+	Emails []string `protobuf:"bytes,3,rep,name=Emails,proto3" json:"Emails,omitempty"`
+	Phone  []*Phone `protobuf:"bytes,4,rep,name=phone,proto3" json:"phone,omitempty"`
+	// Types that are valid to be assigned to Data:
+	//	*Person_School
+	//	*Person_Class
+	Data                 isPerson_Data `protobuf_oneof:"Data"`
+	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
+	XXX_unrecognized     []byte        `json:"-"`
+	XXX_sizecache        int32         `json:"-"`
 }
 
 func (m *Person) Reset()         { *m = Person{} }
@@ -67,18 +73,181 @@ func (m *Person) GetAge() int32 {
 	return 0
 }
 
+func (m *Person) GetEmails() []string {
+	if m != nil {
+		return m.Emails
+	}
+	return nil
+}
+
+func (m *Person) GetPhone() []*Phone {
+	if m != nil {
+		return m.Phone
+	}
+	return nil
+}
+
+type isPerson_Data interface {
+	isPerson_Data()
+}
+
+type Person_School struct {
+	School string `protobuf:"bytes,5,opt,name=School,proto3,oneof"`
+}
+
+type Person_Class struct {
+	Class uint32 `protobuf:"varint,6,opt,name=Class,proto3,oneof"`
+}
+
+func (*Person_School) isPerson_Data() {}
+
+func (*Person_Class) isPerson_Data() {}
+
+func (m *Person) GetData() isPerson_Data {
+	if m != nil {
+		return m.Data
+	}
+	return nil
+}
+
+func (m *Person) GetSchool() string {
+	if x, ok := m.GetData().(*Person_School); ok {
+		return x.School
+	}
+	return ""
+}
+
+func (m *Person) GetClass() uint32 {
+	if x, ok := m.GetData().(*Person_Class); ok {
+		return x.Class
+	}
+	return 0
+}
+
+// XXX_OneofFuncs is for the internal use of the proto package.
+func (*Person) XXX_OneofFuncs() (func(msg proto.Message, b *proto.Buffer) error, func(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error), func(msg proto.Message) (n int), []interface{}) {
+	return _Person_OneofMarshaler, _Person_OneofUnmarshaler, _Person_OneofSizer, []interface{}{
+		(*Person_School)(nil),
+		(*Person_Class)(nil),
+	}
+}
+
+func _Person_OneofMarshaler(msg proto.Message, b *proto.Buffer) error {
+	m := msg.(*Person)
+	// Data
+	switch x := m.Data.(type) {
+	case *Person_School:
+		b.EncodeVarint(5<<3 | proto.WireBytes)
+		b.EncodeStringBytes(x.School)
+	case *Person_Class:
+		b.EncodeVarint(6<<3 | proto.WireVarint)
+		b.EncodeVarint(uint64(x.Class))
+	case nil:
+	default:
+		return fmt.Errorf("Person.Data has unexpected type %T", x)
+	}
+	return nil
+}
+
+func _Person_OneofUnmarshaler(msg proto.Message, tag, wire int, b *proto.Buffer) (bool, error) {
+	m := msg.(*Person)
+	switch tag {
+	case 5: // Data.School
+		if wire != proto.WireBytes {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeStringBytes()
+		m.Data = &Person_School{x}
+		return true, err
+	case 6: // Data.Class
+		if wire != proto.WireVarint {
+			return true, proto.ErrInternalBadWireType
+		}
+		x, err := b.DecodeVarint()
+		m.Data = &Person_Class{uint32(x)}
+		return true, err
+	default:
+		return false, nil
+	}
+}
+
+func _Person_OneofSizer(msg proto.Message) (n int) {
+	m := msg.(*Person)
+	// Data
+	switch x := m.Data.(type) {
+	case *Person_School:
+		n += 1 // tag and wire
+		n += proto.SizeVarint(uint64(len(x.School)))
+		n += len(x.School)
+	case *Person_Class:
+		n += 1 // tag and wire
+		n += proto.SizeVarint(uint64(x.Class))
+	case nil:
+	default:
+		panic(fmt.Sprintf("proto: unexpected type %T in oneof", x))
+	}
+	return n
+}
+
+type Phone struct {
+	Number               string   `protobuf:"bytes,1,opt,name=Number,proto3" json:"Number,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *Phone) Reset()         { *m = Phone{} }
+func (m *Phone) String() string { return proto.CompactTextString(m) }
+func (*Phone) ProtoMessage()    {}
+func (*Phone) Descriptor() ([]byte, []int) {
+	return fileDescriptor_841ab6396175eaf3, []int{1}
+}
+
+func (m *Phone) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_Phone.Unmarshal(m, b)
+}
+func (m *Phone) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_Phone.Marshal(b, m, deterministic)
+}
+func (m *Phone) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Phone.Merge(m, src)
+}
+func (m *Phone) XXX_Size() int {
+	return xxx_messageInfo_Phone.Size(m)
+}
+func (m *Phone) XXX_DiscardUnknown() {
+	xxx_messageInfo_Phone.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Phone proto.InternalMessageInfo
+
+func (m *Phone) GetNumber() string {
+	if m != nil {
+		return m.Number
+	}
+	return ""
+}
+
 func init() {
 	proto.RegisterType((*Person)(nil), "pb.Person")
+	proto.RegisterType((*Phone)(nil), "pb.Phone")
 }
 
 func init() { proto.RegisterFile("Person.proto", fileDescriptor_841ab6396175eaf3) }
 
 var fileDescriptor_841ab6396175eaf3 = []byte{
-	// 85 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x09, 0x48, 0x2d, 0x2a,
-	0xce, 0xcf, 0xd3, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x2a, 0x48, 0x52, 0xd2, 0xe3, 0x62,
-	0x83, 0x88, 0x09, 0x09, 0x71, 0xb1, 0xe4, 0x25, 0xe6, 0xa6, 0x4a, 0x30, 0x2a, 0x30, 0x6a, 0x70,
-	0x06, 0x81, 0xd9, 0x42, 0x02, 0x5c, 0xcc, 0x89, 0xe9, 0xa9, 0x12, 0x4c, 0x0a, 0x8c, 0x1a, 0xac,
-	0x41, 0x20, 0x66, 0x12, 0x1b, 0x58, 0xab, 0x31, 0x20, 0x00, 0x00, 0xff, 0xff, 0xcd, 0x1a, 0x85,
-	0x26, 0x4a, 0x00, 0x00, 0x00,
+	// 193 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x2c, 0x8f, 0xcd, 0x6a, 0x84, 0x30,
+	0x14, 0x85, 0x8d, 0x31, 0x01, 0x6f, 0x5b, 0x28, 0x77, 0x21, 0xd9, 0x19, 0x5c, 0x65, 0xe5, 0xa2,
+	0x7d, 0x83, 0xfe, 0x80, 0xab, 0x22, 0xe9, 0x13, 0x24, 0x43, 0x18, 0x07, 0xd4, 0x04, 0xe3, 0x3c,
+	0xd0, 0xbc, 0xe9, 0x10, 0xcd, 0xee, 0x7c, 0xdf, 0xe2, 0x9e, 0x7b, 0xe0, 0x75, 0x74, 0x5b, 0xf4,
+	0x6b, 0x1f, 0x36, 0xbf, 0x7b, 0x2c, 0x83, 0xed, 0x1e, 0x04, 0xf8, 0x29, 0x11, 0xa1, 0x5a, 0xcd,
+	0xe2, 0x04, 0x91, 0x44, 0xd5, 0xfa, 0xc8, 0xf8, 0x0e, 0xd4, 0x5c, 0x9d, 0x28, 0x25, 0x51, 0x4c,
+	0xa7, 0x88, 0x0d, 0xf0, 0xdf, 0xc5, 0xdc, 0xe6, 0x28, 0xa8, 0xa4, 0xaa, 0xd6, 0x99, 0xb0, 0x05,
+	0x16, 0x26, 0xbf, 0x3a, 0x51, 0x49, 0xaa, 0x5e, 0x3e, 0xea, 0x3e, 0xd8, 0x7e, 0x4c, 0x42, 0x9f,
+	0x1e, 0x05, 0xf0, 0xff, 0xcb, 0xe4, 0xfd, 0x2c, 0x58, 0x2a, 0x18, 0x0a, 0x9d, 0x19, 0x1b, 0x60,
+	0xdf, 0xb3, 0x89, 0x51, 0x70, 0x49, 0xd4, 0xdb, 0x50, 0xe8, 0x13, 0xbf, 0x38, 0x54, 0x3f, 0x66,
+	0x37, 0x5d, 0x0b, 0xec, 0xb8, 0x94, 0xba, 0xff, 0xee, 0x8b, 0x75, 0x5b, 0xfe, 0x31, 0x93, 0xe5,
+	0xc7, 0x9e, 0xcf, 0x67, 0x00, 0x00, 0x00, 0xff, 0xff, 0xe3, 0x6b, 0x3c, 0x3d, 0xdf, 0x00, 0x00,
+	0x00,
 }

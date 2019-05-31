@@ -4,7 +4,7 @@ import (
 	"zinx/zinx/ziface"
 	"fmt"
 	"net"
-	"zinx/zinx/config"
+	"zinx/zinx/conf"
 )
 
 type Server struct {
@@ -38,10 +38,10 @@ func CallBackBusi(request ziface.IRequest) error {
 }*/
 func NewServer(name string) ziface.IServer {
 	s := &Server{
-		Name:       config.GlobalObject.Name,
+		Name:       conf.GlobalObject.Name,
 		IPVersion:  "tcp4",
-		IP:         config.GlobalObject.Host,
-		Port:       config.GlobalObject.Port,
+		IP:         conf.GlobalObject.Host,
+		Port:       conf.GlobalObject.Port,
 		MsgHandler: NewMessageHandler(),
 		Connmng:    NewConneManager(),
 	}
@@ -80,8 +80,8 @@ func (s *Server) Start() {
 			//此时conn就已经和对端客户端连接
 
 			//4 客户端有数据请求，处理客户端业务(读、写)
-			if s.Connmng.Len()>=config.GlobalObject.MaxConn{
-				fmt.Println("too many conn! maxconn=",config.GlobalObject.MaxConn)
+			if s.Connmng.Len()>= conf.GlobalObject.MaxConn{
+				fmt.Println("too many conn! maxconn=", conf.GlobalObject.MaxConn)
 				conn.Close()
 				continue
 			}

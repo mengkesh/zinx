@@ -11,7 +11,7 @@ import (
 func main() {
 	fmt.Println("client start")
 	time.Sleep(time.Second)
-	conn, err := net.Dial("tcp", "127.0.0.1:7777")
+	conn, err := net.Dial("tcp", "192.168.11:196")
 	if err != nil {
 		fmt.Println("client start err,", err)
 		return
